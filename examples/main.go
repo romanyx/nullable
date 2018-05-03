@@ -40,7 +40,7 @@ func main() {
 
 	fmt.Println("name present", usr.Name.Present) // false
 	fmt.Println("name valid", usr.Name.Valid)     // false
-	fmt.Println("name valid", usr.Name.Value)     // ""
+	fmt.Println("name value", usr.Name.Value)     // ""
 
 	data = []byte("{\"name\":null}")
 	if err := json.Unmarshal(data, &usr); err != nil {
@@ -49,7 +49,7 @@ func main() {
 
 	fmt.Println("name present", usr.Name.Present) // true
 	fmt.Println("name valid", usr.Name.Valid)     // false
-	fmt.Println("name valid", usr.Name.Value)     // ""
+	fmt.Println("name value", usr.Name.Value)     // ""
 
 	data = []byte("{\"name\":\"John\"}")
 	if err := json.Unmarshal(data, &usr); err != nil {
@@ -58,7 +58,7 @@ func main() {
 
 	fmt.Println("name present", usr.Name.Present) // true
 	fmt.Println("name valid", usr.Name.Valid)     // true
-	fmt.Println("name valid", usr.Name.Value)     // "John"
+	fmt.Println("name value", usr.Name.Value)     // "John"
 }
 
 func updateDB(ur *updateRequest) {
