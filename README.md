@@ -4,6 +4,7 @@
 # nullable
 
 Provides ability to determine if a json key has been set to null or not provided.
+Inspired by [How to determine if a JSON key has been set to null or not provided](https://www.calhoun.io/how-to-determine-if-a-json-key-has-been-set-to-null-or-not-provided/) article by **Jon Calhoun**
 
 ## Example
 
