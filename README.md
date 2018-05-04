@@ -1,5 +1,6 @@
 [![GoDoc](https://godoc.org/github.com/romanyx/nullable?status.svg)](https://godoc.org/github.com/romanyx/nullable)
 [![Build Status](https://travis-ci.org/romanyx/nullable.png)](https://travis-ci.org/romanyx/nullable)
+[![Go Report Card](https://goreportcard.com/badge/github.com/romanyx/nullable)](https://goreportcard.com/report/github.com/romanyx/nullable)
 
 # nullable
 
