@@ -28,8 +28,9 @@ For more details, see the API documentation.
 # Example
 
 ``` go
-	import "gopkg.in/romanyx/nullable.v1"
+import "gopkg.in/romanyx/nullable.v1"
 
+func main() {
 	usr := struct {
 		Name nullable.String `json:"name"`
 	}{}
@@ -60,6 +61,7 @@ For more details, see the API documentation.
 	fmt.Println(usr.Name.Present) // true
 	fmt.Println(usr.Name.Valid)   // true
 	fmt.Println(usr.Name.Value)   // "John"
+}
 ```
 
 # Contributing
