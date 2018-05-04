@@ -1,8 +1,8 @@
 package nullable
 
 import (
+	"bytes"
 	"encoding/json"
-	"reflect"
 )
 
 // Int represents an int that may be null or not
@@ -17,7 +17,7 @@ type Int struct {
 func (i *Int) UnmarshalJSON(data []byte) error {
 	i.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 
@@ -41,7 +41,7 @@ type IntSlice struct {
 func (i *IntSlice) UnmarshalJSON(data []byte) error {
 	i.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 

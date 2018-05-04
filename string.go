@@ -1,8 +1,8 @@
 package nullable
 
 import (
+	"bytes"
 	"encoding/json"
-	"reflect"
 )
 
 var null = []byte("null")
@@ -19,7 +19,7 @@ type String struct {
 func (s *String) UnmarshalJSON(data []byte) error {
 	s.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 
@@ -43,7 +43,7 @@ type StringSlice struct {
 func (s *StringSlice) UnmarshalJSON(data []byte) error {
 	s.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 

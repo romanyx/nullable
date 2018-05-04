@@ -1,8 +1,8 @@
 package nullable
 
 import (
+	"bytes"
 	"encoding/json"
-	"reflect"
 )
 
 // Float represents a float that may be null or not
@@ -17,7 +17,7 @@ type Float struct {
 func (f *Float) UnmarshalJSON(data []byte) error {
 	f.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 
@@ -41,7 +41,7 @@ type FloatSlice struct {
 func (f *FloatSlice) UnmarshalJSON(data []byte) error {
 	f.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 

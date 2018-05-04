@@ -1,8 +1,8 @@
 package nullable
 
 import (
+	"bytes"
 	"encoding/json"
-	"reflect"
 )
 
 // Bool represents a bool that may be null or not
@@ -17,7 +17,7 @@ type Bool struct {
 func (b *Bool) UnmarshalJSON(data []byte) error {
 	b.Present = true
 
-	if reflect.DeepEqual(data, null) {
+	if bytes.Equal(data, null) {
 		return nil
 	}
 
